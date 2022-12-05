@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+
+<h1>CALCULO IMC </h1>
+
+<script>
+
+	function saltarlinea(){
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+	}
+
+	function imprimir(frase){
+		document.write(frase);
+		saltarlinea();
+	}
+	var peso_r =67
+	var altura_r =1.62
+	var imc_r=peso_r/(altura_r*altura_r)
+
+	imprimir("El IMC de Richard es: " + imc_r)
+
+	var peso_f =68
+	var altura_f =1.65
+	var imc_f=peso_f/(altura_f*altura_f)
+
+	imprimir("El IMC de Felipe es: " + imc_f)
+
+	function calcularIMC(peso, altura){
+
+		//imc=peso /(altura*altura);
+		//return (imc);
+
+		imprimir("El indice de masa corporal es: "+ peso/(altura*altura));
+	}
+
+	calcularIMC(peso_r,altura_r);
+
+
+	//otra forma
+
+	function calcularIMC2(peso, altura){
+		return (peso/(altura*altura));
+	}
+	nombre = prompt("ingrese su nombre: ")
+	peso1 = prompt ("ingrese su peso:")
+	altura1 = prompt ("ingrese su altura :")
+	imprimir (nombre + " Su IMC calculado es:  " + calcularIMC2 (peso1,altura1))
+
+</script>
