@@ -1,0 +1,32 @@
+<canvas width="600" height="400"></canvas>
+<script>
+
+	var pantalla = document.querySelector("canvas");
+	var pincel = pantalla.getContext("2d");
+
+	pincel.fillStyle="grey";
+	pincel.fillRect(0,0,600,400);
+
+	function mostrarMensaje(evento){
+		console.log(evento);
+		var x=evento.pageX-pantalla.offsetLeft;
+		var y=evento.pageY-pantalla.offsetTop;
+		var d = new Date();
+		var hora = checkTime(d.getHours())+":"+checkTime(d.getMinutes()) +":"+checkTime(d.getSeconds());
+		function checkTime(i){
+			if(i<10){
+				i="0"+i;
+			}
+			return i;
+		}
+
+		alert("La hora es: "+hora+" y las coordenadas son: x="+ x +", y=" +y);
+
+	}
+
+	pantalla.onclick =  mostrarMensaje;
+
+
+
+
+</script>	
